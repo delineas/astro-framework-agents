@@ -1,6 +1,6 @@
 # Astro Framework Cheatsheet
 
-**Version:** 2.0.0 | **Astro 5.x** | **Updated:** 2026-03-22 | **Author**: webreactiva.com/ia
+**Version:** 2.0.0 | **Astro 5.x** | **Updated:** 2026-03-22 | **Author**: [webreactiva.com](https://webreactiva.com/ia)
 
 ---
 
