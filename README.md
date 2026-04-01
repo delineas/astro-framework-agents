@@ -30,6 +30,7 @@ This repository is my way of sharing that love with the AI tools we use every da
 | Skill | Description | Install |
 |-------|-------------|---------|
 | [astro-framework](skills/astro-framework/) | Comprehensive Astro framework development guide for islands architecture, content collections, SSR, and view transitions | `npx skills add delineas/astro-framework-agents/astro-framework` |
+| [learning-astro](skills/learning-astro/) | Interactive tutorial to learn Astro by building a personal blog — 3 guided lessons with concepts, reflections, and hands-on code | `npx skills add delineas/astro-framework-agents/learning-astro` |
 
 ## Quick Start
 
@@ -39,6 +40,10 @@ This repository is my way of sharing that love with the AI tools we use every da
 npx skills add https://github.com/delineas/astro-framework-agents --skill astro-framework
 ```
 
+```bash
+npx skills add https://github.com/delineas/astro-framework-agents --skill learning-astro
+```
+
 ### Manual Installation
 
 Clone the repository and copy the desired skill folder to your agent's skills directory:
@@ -46,25 +51,49 @@ Clone the repository and copy the desired skill folder to your agent's skills di
 ```bash
 git clone https://github.com/delineas/astro-framework-agents.git
 cp -r astro-framework-agents/skills/astro-framework ~/.claude/skills/
+cp -r astro-framework-agents/skills/learning-astro ~/.claude/skills/
 ```
 
 ## Repository Structure
 
 ```
 astro-framework-agents/
-├── README.md                 # This file (repository index)
-├── LICENSE                   # MIT License
-├── .gitignore
-└── skills/                   # All skills live here
-    ├── astro-framework/      # Astro framework skill
-    │   ├── SKILL.md          # Main skill instructions
-    │   ├── README.md         # Skill documentation
-    │   ├── AGENTS.md         # Compiled guidelines
-    │   ├── references/       # Detailed reference docs
-    │   └── rules/            # Context-specific rules
-    └── [future-skill]/       # Add more skills here
-        └── SKILL.md
+├── README.md
+├── LICENSE
+└── skills/
+    ├── astro-framework/        # Astro framework reference skill
+    │   ├── SKILL.md            # Main skill instructions
+    │   ├── AGENTS.md           # Compiled guidelines
+    │   ├── references/         # Detailed reference docs (14 files)
+    │   └── rules/              # Context-specific rules (9 files)
+    └── learning-astro/         # Interactive Astro tutorial skill
+        ├── SKILL.md            # Tutoring protocol and lesson structure
+        ├── guides/             # Step-by-step lesson guides (3 lessons)
+        ├── reflect/            # Reflection moments between parts (9 files)
+        ├── concepts/           # Deep dives on Astro fundamentals (4 files)
+        └── help/               # Common errors and verification procedures
 ```
+
+## Skills Overview
+
+### astro-framework
+
+A reference skill for experienced developers building with Astro. Covers islands architecture, content collections, SSR adapters, view transitions, server islands, sessions, actions, i18n, and more. Designed to be consulted while writing Astro code — it provides decision frameworks, code patterns, and rules for Astro 5+/6+.
+
+### learning-astro
+
+An interactive tutorial skill that teaches Astro from scratch by building a personal blog. Designed for beginners and developers coming from other frameworks.
+
+**3 lessons (~45 min each):**
+1. **Your First Astro Site** — Pages, components, layouts, styling
+2. **Content & Dynamic Routes** — Content collections, blog posts, RSS
+3. **Interactivity & Launch** — Islands, view transitions, deployment
+
+**How it works:**
+- Adapts to the user's experience level (beginner / knows other frameworks / knows Astro)
+- Follows a Discover → Build → Reflect rhythm
+- Uses the `astro-framework` skill for technical accuracy
+- Queries the Astro docs MCP for questions beyond the tutorial
 
 ## Creating a New Skill
 
@@ -92,8 +121,6 @@ Instructions for the agent...
 ```
 
 3. (Optional) Add supporting files:
-   - `README.md` - Human-readable documentation
-   - `AGENTS.md` - Compiled guidelines for agents
    - `references/` - Detailed reference documentation
    - `rules/` - Context-specific rules with glob patterns
 
@@ -130,15 +157,6 @@ compatibility: Requires Node.js 18+
 allowed-tools: Bash(npm:*) Read
 ---
 ```
-
-### Optional Directories
-
-| Directory | Purpose |
-|-----------|---------|
-| `references/` | Detailed documentation loaded on-demand |
-| `rules/` | Context-specific rules with glob patterns |
-| `scripts/` | Executable scripts the agent can run |
-| `assets/` | Templates, images, data files |
 
 ## Compatibility
 
